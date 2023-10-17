@@ -15,7 +15,7 @@ export default function ArtistList({
           key={artist.name}
           bordered={false}
           className={classNames(
-            'bg-zinc-950 hover:bg-rose-700',
+            'bg-stone-900 hover:bg-rose-700',
             'ease-linear duration-100',
             'cursor-pointer',
             'rounded-none',

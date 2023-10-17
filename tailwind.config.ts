@@ -17,7 +17,7 @@ const config: Config = {
       {
         dark: {
           ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
-          background: colors.zinc[900]
+          background: colors.zinc[950]
         }
       },
       {
