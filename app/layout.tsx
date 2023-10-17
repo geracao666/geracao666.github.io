@@ -1,7 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import classNames from 'classnames'
+import Providers from '@/app/components/Providers'
+import AppNavbar from '@/app/components/AppNavbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +17,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br">
-      <body className={classNames(inter.className, 'bg-zinc-900')}>
-        {children}
+    <html lang="pt-br" suppressHydrationWarning>
+      <body className={inter.className}>
+        <Providers>
+          <AppNavbar />
+
+          <div className="xl:container mx-auto">
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   )

@@ -1,16 +1,17 @@
-import Image from 'next/image'
+'use client'
+
+import { useQuery } from '@tanstack/react-query'
+import http from '@/app/functions/http'
+import type { Artist } from '@/app/components/artist/types'
+import ArtistList from '@/app/components/artist/ArtistList'
 
 export default function Home() {
+  const { data = [] } = useQuery({
+    queryKey: ['artists'],
+    queryFn: () => http.get<Artist[]>('/artists')
+  })
+
   return (
-    <div className="flex justify-center">
-      <Image
-        src="/geracao666.png"
-        className="my-16"
-        alt="Logo Geração 666"
-        width={366}
-        height={175}
-        priority
-      />
-    </div>
+    <ArtistList artists={data} />
   )
 }
