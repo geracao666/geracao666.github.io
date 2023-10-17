@@ -22,7 +22,7 @@ export default function RootLayout({
         <Providers>
           <AppNavbar />
 
-          <div className="xl:container mx-auto">
+          <div className="container mx-auto px-32">
             {children}
           </div>
         </Providers>

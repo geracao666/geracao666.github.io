@@ -6,10 +6,11 @@ import ThemeSwitcher from "@/app/components/ThemeSwitcher"
 
 export default function AppNavbar() {
   return (
-    <Navbar className="xl:container mx-auto">
+    <Navbar className="container mx-auto px-32">
       <Navbar.Start>
         <Image
           src="/geracao666.png"
+          className="max-w-xs"
           alt="Logo"
           width={366}
           height={175}

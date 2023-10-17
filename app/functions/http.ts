@@ -1,5 +1,5 @@
 export async function request<T = unknown>(input: RequestInfo | URL, init?: RequestInit | undefined) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${input}`, init)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${input}`, init)
   return response.json() as T
 }
 

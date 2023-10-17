@@ -26,7 +26,7 @@ export default function ThemeSwitcher() {
     <Button shape="square" className="btn-ghost" onClick={toggleTheme}>
       <IconContext.Provider value={{
         color: colors.red[700],
-        size: '2rem'
+        size: '1.6rem'
       }}>
         {isDarkMode ? <BsFillMoonStarsFill /> : <FaSun />}
       </IconContext.Provider>

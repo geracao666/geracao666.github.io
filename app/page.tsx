@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import http from '@/app/functions/http'
+import { http } from '@/app/functions'
 import type { Artist } from '@/app/components/artist/types'
 import ArtistList from '@/app/components/artist/ArtistList'
 
