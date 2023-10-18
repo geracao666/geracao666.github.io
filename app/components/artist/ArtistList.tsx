@@ -7,7 +7,7 @@ export default function ArtistList({
   artists: Artist[]
 }) {
   return (
-    <div className="flex">
+    <div className="grid grid-cols-4 gap-3">
       {artists.map((artist) => <ArtistCard key={artist.name} artist={artist} />)}
     </div>
   )
