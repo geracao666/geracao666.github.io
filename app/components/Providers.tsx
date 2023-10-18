@@ -2,11 +2,14 @@
 
 import { ThemeProvider } from 'next-themes'
 import React from 'react'
+import SearchBarProvider from './SearchBarProvider'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider defaultTheme="dark">
-      {children}
+      <SearchBarProvider>
+        {children}
+      </SearchBarProvider>
     </ThemeProvider>
   )
 }
