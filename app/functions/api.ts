@@ -10,11 +10,8 @@ const makeRequestFn = (method: string) => {
   }) as T
 }
 
-const http = {
-  get: makeRequestFn('GET'),
-  post: makeRequestFn('POST'),
-  put: makeRequestFn('PUT'),
-  delete: makeRequestFn('DELETE')
+const api = {
+  get: makeRequestFn('GET')
 }
 
-export default http
+export default api

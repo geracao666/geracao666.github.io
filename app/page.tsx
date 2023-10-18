@@ -1,15 +1,9 @@
-'use client'
-
-import { useQuery } from '@tanstack/react-query'
-import { http } from '@/app/functions'
+import { api } from '@/app/functions'
 import type { Artist } from '@/app/components/artist/types'
 import ArtistList from '@/app/components/artist/ArtistList'
 
-export default function Home() {
-  const { data = [] } = useQuery({
-    queryKey: ['artists'],
-    queryFn: () => http.get<Artist[]>('/artists')
-  })
+export default async function HomePage() {
+  const data = await api.get<Artist[]>('/artists')
 
   return (
     <ArtistList artists={data} />
