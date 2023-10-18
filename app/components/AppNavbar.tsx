@@ -1,9 +1,12 @@
 'use client'
 
-import { Navbar } from "react-daisyui"
+import { Button, Navbar } from "react-daisyui"
 import Image from 'next/image'
 import ThemeSwitcher from "@/app/components/ThemeSwitcher"
 import Link from "next/link"
+import { IconContext } from "react-icons"
+import { BsGithub } from 'react-icons/bs'
+import colors from "tailwindcss/colors"
 
 export default function AppNavbar() {
   return (
@@ -22,6 +25,17 @@ export default function AppNavbar() {
       </Navbar.Start>
 
       <Navbar.End className="pr-8">
+        <a href="https://github.com/geracao666/geracao666.github.io" target="_blank">
+          <Button shape="circle" className="btn-ghost">
+            <IconContext.Provider value={{
+              color: colors.red[700],
+              size: '1.6rem'
+            }}>
+              <BsGithub />
+            </IconContext.Provider>
+          </Button>
+        </a>
+
         <ThemeSwitcher />
       </Navbar.End>
     </Navbar>

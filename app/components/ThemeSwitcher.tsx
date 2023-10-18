@@ -23,7 +23,7 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <Button shape="square" className="btn-ghost" onClick={toggleTheme}>
+    <Button shape="circle" className="btn-ghost" onClick={toggleTheme}>
       <IconContext.Provider value={{
         color: colors.red[700],
         size: '1.6rem'

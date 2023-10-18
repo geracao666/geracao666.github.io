@@ -21,17 +21,17 @@ export default function ArtistCard({
           'cursor-pointer',
           'rounded-none',
           'text-zinc-200',
-          'pt-3 px-3'
+          'pt-3 px-3',
+          'max-w-xs'
         )}
       >
         <Card.Image
           src={`${process.env.NEXT_PUBLIC_API_URL}${artist.cover}`}
           alt={artist.name}
-          className="max-w-xs"
         />
 
         <Card.Body className="px-0 py-6">
-          <Card.Title className="text-xl">{artist.name}</Card.Title>
+          <Card.Title tag="h2" className="text-xl">{artist.name}</Card.Title>
           <p>{artist.discography.length} {plural('lançamento', artist.discography.length)}.</p>
         </Card.Body>
       </Card>

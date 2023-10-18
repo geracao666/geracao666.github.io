@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.first-row-border-none :where(tr:first-child) {
+  @apply border-b-0;
+}
+
+.first-col-w-8 :where(th:first-child) {
+  @apply w-8;
+}
