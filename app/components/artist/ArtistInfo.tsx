@@ -1,6 +1,6 @@
 'use client'
 
-import { Card } from "react-daisyui";
+import { Badge, Card } from "react-daisyui";
 import { Artist } from "./types";
 import classNames from "classnames";
 import { plural } from "@/app/functions";
@@ -28,6 +28,14 @@ export default function ArtistInfo({
       <Card.Body className="px-0 py-6">
         <Card.Title tag="h2" className="text-xl">{artist.name}</Card.Title>
         <p>{artist.discography.length} {plural('lançamento', artist.discography.length)}.</p>
+
+        <Card.Actions className="justify-end">
+          {artist.tags.map(tag => (
+            <Badge key={tag}>
+              {tag}
+            </Badge>
+          ))}
+        </Card.Actions>
       </Card.Body>
     </Card>
   )

@@ -1,6 +1,7 @@
 export type Artist = {
   name: string;
   cover: string;
+  tags: string[];
   discography: Release[]
 }
 

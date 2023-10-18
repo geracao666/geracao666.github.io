@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from '@/app/components/Providers'
 import AppNavbar from '@/app/components/AppNavbar'
+import AppFooter from './components/AppFooter'
+import classNames from 'classnames'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,13 +20,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={classNames('flex', 'flex-col', 'h-screen', inter.className)}>
         <Providers>
           <AppNavbar />
 
           <div className="container mx-auto px-32">
             {children}
           </div>
+
+          <AppFooter />
         </Providers>
       </body>
     </html>
