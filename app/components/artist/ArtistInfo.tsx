@@ -29,13 +29,13 @@ export default function ArtistInfo({
         <Card.Title tag="h2" className="text-xl">{artist.name}</Card.Title>
         <p>{artist.discography.length} {plural('lançamento', artist.discography.length)}.</p>
 
-        <Card.Actions className="justify-end">
+        {artist.tags && <Card.Actions className="justify-end">
           {artist.tags.map(tag => (
             <Badge key={tag}>
               {tag}
             </Badge>
           ))}
-        </Card.Actions>
+        </Card.Actions>}
       </Card.Body>
     </Card>
   )
