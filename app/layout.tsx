@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={classNames('flex', 'flex-col', 'h-screen', inter.className)}>
+      <body className={classNames('flex', 'flex-col', 'min-h-screen', inter.className)}>
         <Providers>
           <AppNavbar />
 

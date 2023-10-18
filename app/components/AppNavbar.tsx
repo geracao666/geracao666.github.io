@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Navbar } from "react-daisyui"
+import { Button, Divider, Navbar } from "react-daisyui"
 import Image from 'next/image'
 import ThemeSwitcher from "@/app/components/ThemeSwitcher"
 import Link from "next/link"
@@ -25,6 +25,12 @@ export default function AppNavbar() {
       </Navbar.Start>
 
       <Navbar.End className="pr-8">
+        <Link href="/about" className="underline">
+          Sobre
+        </Link>
+
+        <Divider horizontal />
+
         <a href="https://github.com/geracao666/geracao666.github.io" target="_blank">
           <Button shape="circle" className="btn-ghost">
             <IconContext.Provider value={{
