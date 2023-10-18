@@ -1,15 +1,23 @@
 'use client'
 
+import {
+  QueryClient,
+  QueryClientProvider
+} from '@tanstack/react-query'
 import { ThemeProvider } from 'next-themes'
-import React from 'react'
 import SearchBarProvider from './SearchBarProvider'
+import React, { useState } from 'react'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
+  const [queryClient] = useState(() => new QueryClient())
+
   return (
-    <ThemeProvider defaultTheme="dark">
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider defaultTheme="dark">
       <SearchBarProvider>
         {children}
       </SearchBarProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   )
 }
