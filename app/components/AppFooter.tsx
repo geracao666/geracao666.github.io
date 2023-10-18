@@ -14,7 +14,7 @@ export default function AppFooter() {
         }}>
           <LuCopyleft />
         </IconContext.Provider>
-        2009
+        {new Date().getFullYear()}
       </div>
     </Footer>
   )

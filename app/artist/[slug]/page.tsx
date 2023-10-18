@@ -5,7 +5,7 @@ import { api, slug } from "@/app/functions"
 
 export async function generateStaticParams() {
   const artists = await api.get<Artist[]>('/artists')
-  return artists.map(artist => ({
+  return artists?.map(artist => ({
     slug: slug(artist.name)
   }))
 }
