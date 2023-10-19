@@ -7,6 +7,7 @@ import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { FaSun } from 'react-icons/fa'
 import { useTheme } from "next-themes"
 import { useMounted } from "@/app/hooks"
+import classNames from "classnames"
 
 export default function ThemeSwitcher() {
   const mounted = useMounted()
@@ -18,17 +19,21 @@ export default function ThemeSwitcher() {
     setTheme(isDarkMode ? 'light' : 'dark')
   }
 
-  if (!mounted) {
-    return null
-  }
-
   return (
-    <Button shape="circle" className="btn-ghost" onClick={toggleTheme}>
+    <Button
+      shape="circle"
+      className={classNames(
+        'btn-ghost',
+        { '!bg-transparent': !mounted }
+      )}
+      onClick={toggleTheme}
+      disabled={!mounted}
+    >
       <IconContext.Provider value={{
-        color: colors.red[700],
+        color: mounted ? colors.red[700] : colors.zinc[400],
         size: '1.6rem'
       }}>
-        {isDarkMode ? <BsFillMoonStarsFill /> : <FaSun />}
+        {!mounted || isDarkMode ? <BsFillMoonStarsFill /> : <FaSun />}
       </IconContext.Provider>
     </Button>
   )

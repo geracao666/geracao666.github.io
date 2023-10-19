@@ -9,3 +9,7 @@
 .first-col-w-8 :where(th:first-child) {
   @apply w-8;
 }
+
+[cmdk-item][data-selected="true"] {
+  @apply bg-zinc-300 dark:bg-slate-700
+}

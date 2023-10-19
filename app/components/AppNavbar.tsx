@@ -7,8 +7,9 @@ import Link from "next/link"
 import { IconContext } from "react-icons"
 import { BsGithub } from 'react-icons/bs'
 import colors from "tailwindcss/colors"
+import AppSearchBar from "./AppSearchBar"
 
-export default function AppNavbar() {
+export default function AppNavbar() {  
   return (
     <Navbar className="container mx-auto px-32">
       <Navbar.Start>
@@ -25,9 +26,7 @@ export default function AppNavbar() {
       </Navbar.Start>
 
       <Navbar.End className="pr-8">
-        <Link href="/about" className="underline">
-          Sobre
-        </Link>
+        <AppSearchBar />
 
         <Divider horizontal />
 
