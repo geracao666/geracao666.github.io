@@ -5,7 +5,6 @@ import Providers from '@/app/components/Providers'
 import AppNavbar from '@/app/components/AppNavbar'
 import AppFooter from './components/AppFooter'
 import classNames from 'classnames'
-import { KBarProvider } from 'kbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
